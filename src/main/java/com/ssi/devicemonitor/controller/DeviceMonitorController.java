@@ -156,7 +156,6 @@ public class DeviceMonitorController {
         dialog.setText(time);
     }
 
-
     private class DeviceListCell extends ListCell<Device> {
         @Override
         protected void updateItem(Device device, boolean empty) {
