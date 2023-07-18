@@ -4,6 +4,7 @@ import com.ssi.devicemonitor.controller.DeviceMonitorController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class DeviceMonitorApp extends Application {
@@ -13,6 +14,9 @@ public class DeviceMonitorApp extends Application {
         FXMLLoader loader = new FXMLLoader(DeviceMonitorApp.class.getResource("device_monitor.fxml"));
         DeviceMonitorController controller = new DeviceMonitorController();
         loader.setController(controller);
+        // Create a layout for the ComboBox
+        VBox layout = new VBox(10);
+
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Device Monitor");

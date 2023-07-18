@@ -5,10 +5,28 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <ListView fx:id="deviceListView" layoutX="45.0" layoutY="46.0" prefHeight="308.0" prefWidth="205.0" />
         <TextField fx:id="deviceNameTextField" layoutX="277.0" layoutY="46.0" prefWidth="222.0" />
         <Button fx:id="addDeviceButton" layoutX="277.0" layoutY="84.0" mnemonicParsing="false" onAction="#addDevice" text="Add Device" />
+        <TextField fx:id="dialog" layoutX="277.0" layoutY="220.0" prefWidth="222.0" />
+        <TextField fx:id="deviceProperties" layoutX="277.0" layoutY="330.0" prefWidth="222.0" />
+        <!-- <ComboBox fx:id="deviceTypeComboBox" layoutX="277.0" layoutY="118.0" promptText="Select a Device Type" />
+        -->
+        <VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+            <ComboBox fx:id="deviceTypeComboBox" promptText="Select an option">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Hardware Device" />
+                        <String fx:value="Software Device" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </VBox>
     </children>
 </AnchorPane>
