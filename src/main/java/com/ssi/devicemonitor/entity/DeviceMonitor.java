@@ -27,6 +27,17 @@ public class DeviceMonitor {
     }
 
     public void removeDevice(Device device) {
+        this.devices.remove(device);
+    }
+
+    // Method to get a device by its name
+    public Device getDeviceByName(String name) {
+        for (Device device : devices) {
+            if (device.getName().equals(name)) {
+                return device;
+            }
+        }
+        return null;
     }
 
 
@@ -38,7 +49,7 @@ public class DeviceMonitor {
             for (Device device : devices) {
                 // Simulate random status updates
                 boolean isOnline = random.nextBoolean();
-                device.setStatus(isOnline ? "Online" : "Offline");
+                device.setStatus(isOnline ? Status.ONLINE : Status.ONLINE);
             }
         }
     }
